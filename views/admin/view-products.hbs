@@ -1,25 +1,29 @@
 <section>
-    <div class="container">
-        <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">No</th>
-      <th scope="col">Title</th>
-      <th scope="col">Category</th>
-      <th scope="col">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each products}}
-    <tr>
-      <th scope="row">1</th>
-      <td>{{this.name}}</td>
-      <td>{{this.category}}</td>
-      <td>{{this.description}}</td>
-      <td><img src="{{this.Image}}" class="thumbanil" alt=""></td>
-    </tr>
-    {{/each}}
-  </tbody>
-</table>
+  <div class="container">
+    <div class="row mt-3">
+      <a href="/admin/add-product" class="btn btn-success ml-auto">Add product</a>
     </div>
+    <table class="table mt-3">
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Title</th>
+          <th scope="col">Category</th>
+          <th scope="col">Description</th>
+          <th scope="col">Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each products}}
+        <tr>
+          <th scope="row">1</th>
+          <td>{{this.name}}</td>
+          <td>{{this.category}}</td>
+          <td>{{this.description}}</td>
+          <td><img src="{{this.Image}}" class="thumbanil" alt=""></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
 </section>
