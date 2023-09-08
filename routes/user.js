@@ -26,7 +26,7 @@ router.get('/', function(req, res, next) {
     {
       name:"Galaxy Z Flip5",
       category:"Mobile",
-      description:"Special edition Available on samsung.com",
+      description:"Special edition Available",
       Image:"https://img4.gadgetsnow.com/gd/images/products/additional/large/G390766_View_1/mobiles/smartphones/apple-iphone-14-128-gb-blue-6-gb-ram-.jpg"
     }
   ]
