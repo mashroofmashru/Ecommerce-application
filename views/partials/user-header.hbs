@@ -2,9 +2,7 @@
     <section class="mt-2">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div>
-            <img class="logo navbar-image"
-            src="/logo/log.jpg"
-            alt="Logo">
+                <img class="logo navbar-image" src="/logo/log.jpg" alt="Logo">
             </div>
 
 
@@ -12,7 +10,7 @@
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <div class="collapse navbar-collapse align-centre mx-auto" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
@@ -30,17 +28,31 @@
                             <a class="dropdown-item" href="#">Accessories</a>
                         </div>
                     </li>
-                     <li class="nav-item active">
+                    <li class="nav-item active">
                         <a class="nav-link" href="#">Cart <span class="sr-only">(current)</span></a>
                     </li>
-                     <li class="nav-item active">
+                    <li class="nav-item active">
                         <a class="nav-link" href="#">Orders <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{#if user}}
+                        Hai {{user.Name}}!
+                        {{else}}
+                        Account
+                        {{/if}}
+                        
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        {{#if user}}
+                        <a class="dropdown-item" href="/logout">Logout</a>
+                        {{else}}
+                        <a class="dropdown-item" href="/login">Login</a>
+                        {{/if}}
+                    </div>
+                </div>
             </div>
         </nav>
     </section>

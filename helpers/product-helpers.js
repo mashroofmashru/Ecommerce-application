@@ -1,7 +1,5 @@
 var db=require('../config/connection');
 var collection=require('../config/collections');
-const async = require('hbs/lib/async');
-
 module.exports={
     addProducts:(product,callback)=>{
         console.log(product);
