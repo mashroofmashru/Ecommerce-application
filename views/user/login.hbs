@@ -12,6 +12,9 @@
                     <input type="password" id="Password" name="Password" class="form-control" required
                         placeholder="Enter password">
                 </div>
+                {{#if loginErr}}
+                    <p class="text-danger font-weight-bold">{{loginErr}}</p>
+                {{/if}}
                 <div class="form-group text-center">
                     <button type="submit" class="btn btn-login btn-block">Login</button>
                 </div>
