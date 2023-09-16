@@ -19,11 +19,32 @@ module.exports={
     },
     deleteProducts:(prodId)=>{
         return new Promise((resolve,reject)=>{
-            console.log("proId:",prodId)
             db.get().collection(collection.PRODUCS_COLLECTIONS).deleteOne({ _id:new ObjectId(prodId) }).then((response)=>{
                 resolve(response);
             });
         });
 
+    },
+    getProductDeatails:(prodId)=>{
+        return new Promise((resolve,reject)=>{
+            db.get().collection(collection.PRODUCS_COLLECTIONS).findOne({_id:new ObjectId(prodId)}).then((product)=>{
+                resolve(product);
+            });
+        });
+    },
+    updateProduct:(prodId,product)=>{
+        return new Promise((resolve,reject)=>{
+            db.get().collection(collection.PRODUCS_COLLECTIONS).updateOne({_id:new ObjectId(prodId)},{
+                $set:{
+                    Name:product.Name,
+                    Category:product.Category,
+                    Price:product.Price,
+                    Description:product.Description
+
+                }
+            }).then((response)=>{
+                resolve()
+            });
+        });
     }
 }

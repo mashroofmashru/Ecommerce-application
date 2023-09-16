@@ -13,11 +13,11 @@ router.get('/', function(req, res, next) {
 });
 
 // add product------------------------------------
-router.get('/add-product',function(req,res){
+router.get('/add-product',(req,res)=>{
   res.render('admin/add-product',{admin:true})
 });
 
-router.post('/add-product',function(req,res){
+router.post('/add-product',(req,res)=>{
   console.log(req.body);
   console.log(req.files.image);
 
@@ -43,6 +43,25 @@ router.get('/delete-product/', (req, res) => {
     res.redirect('/admin/');
   });
 
+});
+
+router.get('/edit-product/',async(req,res)=>{
+  let product= await productHelpers.getProductDeatails(req.query.id);
+  res.render('admin/edit-product',{product});
+
+});
+
+router.post('/edit-product',(req,res)=>{
+  console.log(req.query.id);
+  productHelpers.updateProduct(req.query.id,req.body).then(()=>{
+    res.redirect('/admin');
+    
+    if(req.files.Image){
+      let id=req.query.id;
+      let image=req.files.Image;
+      image.mv('./public/product-Images/'+id+'.jpg');
+    }
+  });
 });
 
 
