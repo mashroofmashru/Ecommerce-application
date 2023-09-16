@@ -3,7 +3,14 @@ const { describe } = require('node:test');
 var router = express.Router();
 var productHelpers=require('../helpers/product-helpers');
 var userHelpers=require('../helpers/user-helpers');
+const    verifyLogin=(req,res,next)=>{
+  if(req.session.loggedIn){
+    next();
+  }else{
+      res.redirect('/login')
+  }
 
+}
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -58,6 +65,9 @@ router.get('/logout',(req,res)=>{
 
 });
 
+router.get('/cart',verifyLogin,(req,res)=>{
+  res.render('user/cart');
 
+});
 
 module.exports = router;
