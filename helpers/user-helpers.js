@@ -64,13 +64,14 @@ module.exports={
     },
     getCartProducts:(userId)=>{
         return new Promise(async(resolve,reject)=>{
+            console.log("Fetching cart items for user ID:", userId)
             let cartItems=await db.get().collection(collection.CART_COLLECTION).aggregate([
                 {
                     $match:{user:new objectId(userId)}
                 },
                 {
                     $lookup: {
-                        from: collection.PRODUCS_COLLECTIONS, // Should be "from" here
+                        from: collection.PRODUCS_COLLECTIONS,
                         let: { prodList: '$products' },
                         pipeline: [
                             {
@@ -86,7 +87,7 @@ module.exports={
                 }
 
             ]).toArray()
-            resolve(cartItems)
+            resolve(cartItems[0].cartItems)
         });
         
     }
