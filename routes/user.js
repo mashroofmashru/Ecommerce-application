@@ -13,11 +13,16 @@ const    verifyLogin=(req,res,next)=>{
 }
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/',async function(req, res, next) {
   let user=req.session.user;
+  let cartCount=null;
+  console.log(user);
+  if(user){
+    cartCount=await userHelpers.getCartCount(req.session.user._id);
+  }
 
   productHelpers.getAllProducts().then((products)=>{
-    res.render('user/view-products',{products,user});
+    res.render('user/view-products',{products,user,cartCount});
   });
 
 });
@@ -74,9 +79,11 @@ router.get('/cart',verifyLogin,async(req,res)=>{
 
 });
 
-router.get('/add-to-cart/',verifyLogin,(req,res)=>{
-  userHelpers.addToCart(req.query.id, req.session.user._id).then(()=>{
-    res.redirect('/');
+router.get('/add-to-cart/:id',(req,res)=>{
+  console.log("api call")
+  userHelpers.addToCart(req.params.id, req.session.user._id)
+  .then(() => {
+    res.json({ status: true });
   });
 });
 
