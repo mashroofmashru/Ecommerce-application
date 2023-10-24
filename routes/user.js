@@ -80,11 +80,25 @@ router.get('/cart',verifyLogin,async(req,res)=>{
 });
 
 router.get('/add-to-cart/:id',(req,res)=>{
-  console.log("api call")
   userHelpers.addToCart(req.params.id, req.session.user._id)
   .then(() => {
     res.json({ status: true });
   });
+});
+
+router.post('/change-product-quantity',(req,res,next)=>{
+  userHelpers.changeProductQuantity(req.body).then((response)=>{
+    res.json(response);
+  })
+})
+
+// -----removeBtnactionRounter--------
+// -----removeBtnactionRounter--------
+
+router.get('/place-order',verifyLogin,async(req,res)=>{
+  let total=await userHelpers.getTotalAmount(req.session.user._id)
+  res.render('user/place-order',{total});
+
 });
 
 module.exports = router;

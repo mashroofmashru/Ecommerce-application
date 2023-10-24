@@ -39,3 +39,58 @@
     height: auto;
     margin: 10px;
 }
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+#checkout-form {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.h2 {
+    color: #333;
+}
+label {
+    font-weight: bold;
+    color: #555;
+}
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.col-md-6 {
+    flex-basis: calc(50% - 10px);
+}
+.col-md-4 {
+    flex-basis: calc(33.33% - 10px);
+}
+.mt-5 {
+    margin-top: 20px;
+}
+.ml-5 {
+    margin-left: 20px;
+}
+.checkout {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.payment p {
+    font-weight: bold;
+}
+.ratio-inline {
+    display: inline-block;
+    margin-right: 10px;
+}
