@@ -37,6 +37,7 @@ router.post('/add-product',(req,res)=>{
   });
 });
 
+// Delete product------------------------------------
 router.get('/delete-product/', (req, res) => {
   let prodId = req.query.id;
   productHelpers.deleteProducts(prodId).then((response) => {
@@ -45,6 +46,7 @@ router.get('/delete-product/', (req, res) => {
 
 });
 
+// edit product------------------------------------
 router.get('/edit-product/',async(req,res)=>{
   let product= await productHelpers.getProductDeatails(req.query.id);
   res.render('admin/edit-product',{product});
