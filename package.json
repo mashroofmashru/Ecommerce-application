@@ -13,7 +13,7 @@
     "express-fileupload": "^1.4.0",
     "express-handlebars": "^7.1.2",
     "express-session": "^1.17.3",
-    "hbs": "~4.0.4",
+    "hbs": "~4.2.0",
     "http-errors": "~1.6.3",
     "mongodb": "^6.0.0",
     "morgan": "~1.9.1",
