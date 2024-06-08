@@ -1,41 +1,62 @@
-<section>
-    <div class="container">
-        <table class="table nt-5">
-            <thead>
-                <tr>
-                    <th scope="col">Ithem</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Quantity</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each products}}
-                <tr>
-                    <td>
-                        <img style="width: 70px; height: 70px;" src="/product-Images/{{this.product._id}}.jpg" alt="product image">
-                    </td>
-                    <td>{{this.product.Name}}</td>
-                    <td>Rs.{{this.product.Price}}</td>
-                    <td>
-                        <button class="cart-item-count mr-3" onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',-1)" >-</button>
-                        <span id="{{this.product._id}}">{{this.quantity}}</span>
-                        <button class="cart-items-count ml-3" onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',1)">+</button>
-                    </td>
-                    <td>
-                        <button class="btn btn-danger" onclick="deleteCartProduct('{{this._id}}','{{this.product._id}}','{{../user._id}}')">Remove</button>
-                    </td>
-                </tr>
-                {{/each}}
-            </tbody>
-        </table>
-
-        <hr>
-        <hr>
-        <div class="float-right pr-5">
-            <h5 class="float-left mr-5">Rs.<span id="total">{{totalValue}}</span></h5><br>
-            <a href="/place-order" class="btn btn-success mt-3" style="width: 100%;"><b>Place Order</b></a>
-
+<link rel="stylesheet" href="/stylesheets/cart.css">
+<!-- cart items -->
+    <section class="cart-items mt-5">
+        <div class="row">
+            <div class="card my-4 border-0">
+                <div class="row">
+                    <div class="col-md-8 cart">
+                        <div class="title">
+                            <div class="row">
+                                <div class="col">
+                                    <h4><b>My cart(4)</b></h4>
+                                </div>
+                                <div class="col align-self-center text-right text-muted">4 items</div>
+                            </div>
+                        </div>
+                        <!-- cartpro1 -->
+                        {{#each products}}
+                        <div class="row border-top border-bottom">
+                            <div class="row main align-items-center">
+                                <div class="col-2">
+                                    <img class="img-fluid"
+                                        src="/product-Images/{{this.product._id}}.jpg">
+                                </div>
+                                <div class="col">
+                                    <div class="row text-muted">{{this.product.Name}}</div>
+                                    <div class="row">{{this.Category}}</div>
+                                    <div class="col">&#8377;{{this.product.Price}}</div>
+                                </div>
+                                <div class="m-2">
+                                    <a onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',-1)">-</a>
+                                    <a  class="border" id="{{this.product._id}}">{{this.quantity}}</a>
+                                    <a onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',1)">+</a>
+                                </div>
+                                <span class="close"><a onclick="deleteCartProduct('{{this._id}}','{{this.product._id}}','{{../user._id}}')">&#10005;</a></span>
+                            </div>
+                        </div>
+                        {{/each}}                        
+                        <!-- .. -->
+                    </div>
+                    <div class="col-md-4 price-details">
+                        <div>
+                            <h5><b>PRICE DETAILS</b></h5>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col" style="padding-left:0;">Price(4 items)</div>
+                            <div class="col text-right" id="total">&#8377;{{totalValue}}</div>
+                        </div>
+                        <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                            <div class="col" style="padding-left:0;">Delivery Charge</div>
+                            <div class="col text-right">&#8377;50 </div>
+                        </div>
+                        <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                            <div class="col">TOTAL PRICE</div>
+                            <div class="col text-right">&#8377;353,918 </div>
+                        </div>
+                        <button class="btn btn-success" onclick="/place-order"><b>CHECKOUT</b></button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>

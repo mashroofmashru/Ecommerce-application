@@ -1,6 +1,6 @@
 <section>
-    <div class="container">
-        <table class="table mt-3">
+    <div class="container mt-5">
+        <table class="table mt-3" id="orderList">
             <thead>
                 <tr>
                     <th scope="col">Date</th>
@@ -10,6 +10,7 @@
                     <th scope="col">Amount</th>
                     <th scope="col">Payment</th>
                     <th scope="col">Status</th>
+                    <th scope="col" hidden>view Products</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,3 +32,8 @@
         </table>
     </div>
 </section>
+<script>
+  jQuery(document).ready(function () {
+    jQuery('#orderList').DataTable();
+  });
+</script>

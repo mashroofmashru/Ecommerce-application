@@ -1,25 +1,38 @@
-<div class="row">
-    <div class="col-md-6">
-        <div class="container-login mt-5 ">
-            <h1 class="text-center">User-Login</h1>
-            <form action="/login" method="POST">
+<link rel="stylesheet" href="/stylesheets/login.css">
+<section class="glass-effct">
+    <div class="login">
+      <div class="container pt-5 align-items-center">
+        <div class="row">
+          <div class="col-md-6 mx-auto my-auto text-light">
+            <div class="container-login mt-5">
+              <a href="admin-home.html"><img class="login-logo mx-auto d-block mb-3" src="logo/image.png" alt=""></a>
+              <form action="/login" method="POST">
                 <div class="form-group">
-                    <label for="username">Email Address:</label>
-                    <input type="email" id="Email" name="Email" class="form-control" required placeholder="Enter email">
+                  <label for="Email">Email Address:</label>
+                  <input type="email" id="Email" name="Email" class="form-control" required placeholder="Enter email">
                 </div>
                 <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="Password" name="Password" class="form-control" required
-                        placeholder="Enter password">
+                  <label for="Password">Password:</label>
+                  <input type="password" id="Password" name="Password" class="form-control" required
+                    placeholder="Enter password">
                 </div>
-                {{#if loginErr}}
-                    <p class="text-danger font-weight-bold">{{loginErr}}</p>
-                {{/if}}
                 <div class="form-group text-center">
-                    <button type="submit" class="btn btn-login btn-block">Login</button>
+                  <button type="submit" class="btn btn-login btn-block btn-success">Login</button>
                 </div>
-            </form>
-            <p class="text-center">Don't have an account? <a href="/signup">Sign up here</a></p>
+              </form>
+              <p class="text-center">Don't have an account? <a href="/signup">Sign up here</a></p>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+    <footer class="text-light ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center py-3">
+            <!-- copyright -->
+            <p class="mb-0 text-center copy-txt">&copy; 2023 Mashroofmashru | All rights reserved</p>
+          </div>
+        </div>
+    </footer>
+  </section>

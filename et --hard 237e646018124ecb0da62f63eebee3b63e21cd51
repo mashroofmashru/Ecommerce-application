@@ -1,0 +1,107 @@
+[33mcommit 237e646018124ecb0da62f63eebee3b63e21cd51[m[33m ([m[1;36mHEAD[m[33m)[m
+Author: mashroofmashru <mashroofvlk@gmail.com>
+Date:   Sat Nov 11 23:35:35 2023 +0530
+
+    Payment Gateway,  Payment gateway(Cont.), Order Summary, Delete cart product
+
+[33mcommit 51cfc9d3d5fd17dde6e9228f14efa5b8f97c8b26[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: mashroofmashru <mashroofvlk@gmail.com>
+Date:   Sun Nov 5 20:13:44 2023 +0530
+
+    product images folder removed from this repo..
+
+[33mcommit 87fdc45f461fce4f915fa0079c956cc28b41088a[m
+Author: mashroofmashru <mashroofvlk@gmail.com>
+Date:   Sun Nov 5 20:05:06 2023 +0530
+
+    Total Price of Cart Product (Cont.), Order Placing, Order List
+
+[33mcommit 9d59813fa616a78d0c634b5a38e52b0288d7ed7b[m
+Author: mashroofmashru <mashroofvlk@gmail.com>
+Date:   Tue Oct 24 21:37:38 2023 +0530
+
+    increment or decrement cart quantity on click and use ajax for it, place order page created and list total amount on this page
+
+[33mcommit 7e931210551885d22a911e5e363b925f6bab2029[m
+Author: mashroofmashru <mashroofvlk@gmail.com>
+Date:   Sat Oct 21 23:37:55 2023 +0530
+
+    Add cart count on user header and use ajax for it , list product quantity on cart page
+
+[33mcommit 620dbcb604504a3ae5994c194e4eb27c178654f3[m
+Author: mashroofmashru <mashroofvlk@gmail.com>
+Date:   Tue Oct 3 20:11:58 2023 +0530
+
+    list cart product on cart page
+
+[33mcommit cc9a71fe115558c59075a866fb89047dc19d1649[m
+Author: mashroofmashru <mashroofvlk@gmail.com>
+Date:   Sun Sep 24 12:12:38 2023 +0530
+
+    add to cart, get cart product using aggrigation metod
+
+[33mcommit cd060489269b024fe027422f5f2609d05506ce5d[m
+Author: mashroofmashru <mashroofvlk@gmail.com>
+Date:   Sun Sep 17 08:43:23 2023 +0530
+
+    session created signup event.image change feature on edit image page
+
+[33mcommit e54e31b05b9500cde2328f491534f36a11a76394[m
+Author: mashroofmashru <mashroofvlk@gmail.com>
+Date:   Sat Sep 16 23:23:16 2023 +0530
+
+    edit product details on admin side
+
+[33mcommit 9b234f05c00ef6ddaadce749815fbddc4cc077f4[m
+Author: mashroofmashru <mashroofvlk@gmail.com>
+Date:   Sat Sep 16 21:51:03 2023 +0530
+
+    delete product feature on admin side
+
+[33mcommit d41775754edd9a366255ff0a76ed30d7ce867c15[m
+Author: mashroofmashru <mashroofvlk@gmail.com>
+Date:   Wed Sep 13 23:29:27 2023 +0530
+
+    user valid or invalid checking and display error message
+
+[33mcommit c75b9102382037053a7c1d8ad8412610219a693f[m
+Author: mashroofmashru <mashroofvlk@gmail.com>
+Date:   Mon Sep 11 23:22:02 2023 +0530
+
+    user signup/login. password encription with bcrypt, login session keeping
+
+[33mcommit da1794c39212ec4d1c57d99df943539d4cf39dfb[m
+Author: mashroofmashru <mashroofvlk@gmail.com>
+Date:   Sun Sep 10 00:21:50 2023 +0530
+
+    take and store product details from add-product page into mongodb and show products on user side
+
+[33mcommit e549f99af5faab512c814b135ffea86e63c8a44b[m
+Author: mashroofmashru <mashroofvlk@gmail.com>
+Date:   Fri Sep 8 21:48:52 2023 +0530
+
+    admin and User router created, Data base connection created
+
+[33mcommit a710a34b2e0891a64b522ae4f55d1de6706d05dc[m
+Author: mashroofmashru <mashroofvlk@gmail.com>
+Date:   Fri Sep 1 00:57:17 2023 +0530
+
+    add products form created
+
+[33mcommit cc25eed8323b62adb74135780c78f7e8d4090a36[m
+Author: mashroofmashru <mashroofvlk@gmail.com>
+Date:   Thu Aug 31 23:53:12 2023 +0530
+
+    admin-hader and user header added, to show product add table
+
+[33mcommit 2860394650115b0ff54a419d1e607e6f28fcd6c4[m
+Author: mashroofmashru <mashroofvlk@gmail.com>
+Date:   Fri Aug 25 22:02:11 2023 +0530
+
+    product cards added
+
+[33mcommit e0ab3775bf8f371ccb0dc2a21fd68a24cda5e0c5[m
+Author: mashroofmashru <mashroofvlk@gmail.com>
+Date:   Thu Aug 24 22:57:14 2023 +0530
+
+    file created

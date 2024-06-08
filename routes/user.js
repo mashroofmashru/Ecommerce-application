@@ -21,7 +21,7 @@ router.get('/',async function(req, res, next) {
   }
 
   productHelpers.getAllProducts().then((products)=>{
-    res.render('user/view-products',{products,user,cartCount});
+    res.render('user/index',{products,user,cartCount});
   });
 
 });
@@ -136,13 +136,13 @@ router.get('/order-placed',(req,res)=>{
 })
 
 //List Orders-----------------------------------------
-router.get('/orders',async(req,res)=>{
+router.get('/orders',verifyLogin,async(req,res)=>{
   let orders=await userHelpers.getUserOrders(req.session.user._id);
   res.render('user/orders',{user:req.session.user,orders});
 })
 
 //List OrderProducts-----------------------------------
-router.get('/view-order-products/:id',async(req,res)=>{
+router.get('/view-order-products/:id',verifyLogin,async(req,res)=>{
   let products= await userHelpers.getOrderProducts(req.params.id);
   res.render('user/view-order-products',{user:req.session.user,products});
 })

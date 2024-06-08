@@ -1,19 +1,35 @@
-<section>
-    <div class="container mt-4 p-1 mx-auto">
-        <div class="row">
-            {{#each products}}
-            <div class="col-md-3 p-3">
-                <div class="card" style="width: 17rem; height: 32rem">
-                    <img class="card-img-top card-image" src="/product-Images/{{this._id}}.jpg">
-                    <div class="card-body">
-                        <h5 class="card-title">{{this.Name}}</h5>
-                        <h6 class="card-title">Rs.{{this.Price}}</h5>
-                        <p class="card-text">{{this.Description}}</p>
-                        <button onclick="addToCart('{{this._id}}')" class="btn btn-primary">Add to cart</button>
+<section class="list-all-prod">
+
+    <div>
+        <div class="container pt-5">
+            <h3 class="page-head m-2 "><a href="" class="prod-name">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                    </svg>
+                    <b>all products</b>
+                </a>
+            </h3>
+            <div class="row pt-5">
+                {{#each products}}
+                <div class="col-md-3 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="/product-Images/{{this._id}}.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <a href="/product-detail?{{this._id}}" class="font-bold h5">
+                                <span
+                                    class="prod-name text-decoration-none text-dark text-uppercase">{{this.Name}}</span>
+                            </a>
+                            <div>
+                                <span class="sale-price font-semibold">&#8377;{{this.Price}}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                {{/each}}
             </div>
-            {{/each}}
         </div>
+    </div>
     </div>
 </section>

@@ -1,0 +1,27 @@
+.login {
+    min-height: 43rem;
+    width: 100%;
+}
+
+body {
+    background-image: url('/logo/login-bg.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.glass-effct{
+    background: rgba(0, 0, 0, 0.55);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.1px);
+    -webkit-backdrop-filter: blur(8.1px);
+}
+
+.copy-txt{
+    font-size: 10px;
+}
+
+.login-logo{
+    height: 65px;
+    width: auto;
+}
