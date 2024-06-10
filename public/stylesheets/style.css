@@ -50,3 +50,11 @@
     right: 0;
     z-index: 1030;
 }
+
+.cart-count{
+    font-family: arial;
+    font-size: 10px;
+    top: 0;
+    right: 0;
+}
+                

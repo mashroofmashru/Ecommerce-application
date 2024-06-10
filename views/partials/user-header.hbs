@@ -7,7 +7,7 @@
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <img class="header-logo navbar-brand" src="logo/image.png" alt="">
+          <img class="header-logo navbar-brand" src="/logo/image.png" alt="">
           <form class="form-inline">
             <input class="form-control mr-sm-2 Search-rounded" type="search" placeholder="Search" aria-label="Search">
           </form>
@@ -19,8 +19,9 @@
               <li class="nav-item ml-3">
                 <a class="nav-link active nav-txt" href="/#category"><b>Categories</b></a>
               </li>
-              <li class="nav-item ml-3">
+              <li class="nav-item ml-3 position-relative">
                 <a class="nav-link active nav-txt" href="/cart"><b>Cart</b></a>
+                <p id="cart-count" class="cart-count position-absolute text-dark bg-light px-1 rounded-circle font-weight-bold">{{cartCount}}</p>
               </li>
               <li class="nav-item ml-3">
                 <a class="nav-link active nav-txt" href="/order"><b>Orders</b></a>

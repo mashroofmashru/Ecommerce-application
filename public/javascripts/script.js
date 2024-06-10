@@ -6,6 +6,7 @@ for (var i = 0; i < elements.length; i++) {
 }
 
 function addToCart(prodId) {
+    console.log('hai addToProduct')
 
     $.ajax({
         url: '/add-to-cart/' + prodId,
@@ -15,8 +16,10 @@ function addToCart(prodId) {
                 let count = $('#cart-count').html();
                 count = parseInt(count) + 1;
                 $("#cart-count").html(count);
+                alert('Product added to cart!')
+            }else{
+                location.href='/login';
             }
-            console.log(response);
         }
     })
 }
@@ -41,6 +44,7 @@ function changeQuantity(cartId, proId, userId, count) {
             } else {
                 document.getElementById(proId).innerHTML = quantity + count
                 document.getElementById('total').innerHTML = response.total
+                document.getElementById('totaldelivery').innerHTML= response.total+50;
             }
         }
 

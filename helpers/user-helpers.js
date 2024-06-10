@@ -3,6 +3,7 @@ var collection = require('../config/collections');
 const bcrypt = require('bcrypt');
 var objectId = require("mongodb").ObjectId;
 const Razorpay = require('razorpay');
+const { resolve } = require('path');
 var instance = new Razorpay({
     key_id: 'rzp_test_IvGWMBpENteAE2',
     key_secret: 'tH4vJwFji3WLnDms9bT9sPyL',
@@ -40,6 +41,12 @@ module.exports = {
                 resolve({ status: false })
             }
         });
+    },
+    getProducDetals:(prodId)=>{
+        return new Promise(async(resolve,reject)=>{
+            let product= await db.get().collection(collection.PRODUCS_COLLECTIONS).findOne({_id:new objectId(prodId)})
+            resolve(product)
+        })
     },
     addToCart: (prodId, userId) => {
 
@@ -209,7 +216,12 @@ module.exports = {
                 }
 
             ]).toArray();
-            resolve(total[0].total);
+
+            if(total[0].total){
+                resolve(total[0].total);
+            }else{
+                resolve(total[0].total=0);
+            }
         });
 
     },

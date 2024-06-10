@@ -1,0 +1,30 @@
+<!-- product detail -->
+    <section class="mt-5">
+        <link rel="stylesheet" href="/stylesheets/product-page.css">
+        <div class="container mt-5">
+            <div class="row my-5">
+                <div class="prod-img col-md-5 border-right pt-2">
+                    <img class="img-fluid prod-img" src="/product-Images/{{product._id}}.jpg" alt="product-image">
+                </div>
+                <div class="product-details col-md-6 m-4 ">
+                    <h3 class="my-2 text-uppercase">{{product.Name}}</h3>
+                    <p class="my-2"><b>{{product.Category}}</b></p>
+                    <span>
+                        <h4 class="my-2 d-inline"><b>&#8377;{{product.Price}}</b></h4>
+                        <p class="d-inline">&#8377<del>70000</del></p>
+                    </span>
+                    <p class="text-danger">Hurry! Limited Stocks only</p>
+                    <p class="my-4">
+                        <b>Description:</b><br>
+                        {{product.Description}} 
+                    </p>
+                    <div class="row">
+                    <button type="button" onclick="addToCart('{{product._id}}')"
+                        class="btn btn-primary btn-lg col-md-5 mr-2 mt-1">Add to Cart</button>
+                    <button type="button" onclick="buyNow('{{product._id}}')"
+                        class="btn btn-secondary btn-lg col-md-5 mr-2 mt-1">Buy Now</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>

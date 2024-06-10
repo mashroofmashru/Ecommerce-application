@@ -8,9 +8,8 @@
                         <div class="title">
                             <div class="row">
                                 <div class="col">
-                                    <h4><b>My cart(4)</b></h4>
+                                    <h4><b>My cart({{cartCount}})</b></h4>
                                 </div>
-                                <div class="col align-self-center text-right text-muted">4 items</div>
                             </div>
                         </div>
                         <!-- cartpro1 -->
@@ -26,10 +25,10 @@
                                     <div class="row">{{this.Category}}</div>
                                     <div class="col">&#8377;{{this.product.Price}}</div>
                                 </div>
-                                <div class="m-2">
-                                    <a onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',-1)">-</a>
-                                    <a  class="border" id="{{this.product._id}}">{{this.quantity}}</a>
-                                    <a onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',1)">+</a>
+                                <div class="m-2 border border-2">
+                                    <button class="border-0" onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',-1)">-</button>
+                                    <span  class="" id="{{this.product._id}}">{{this.quantity}}</span>
+                                    <button class="border-0" onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',1)">+</button>
                                 </div>
                                 <span class="close"><a onclick="deleteCartProduct('{{this._id}}','{{this.product._id}}','{{../user._id}}')">&#10005;</a></span>
                             </div>
@@ -43,8 +42,8 @@
                         </div>
                         <hr>
                         <div class="row">
-                            <div class="col" style="padding-left:0;">Price(4 items)</div>
-                            <div class="col text-right" id="total">&#8377;{{totalValue}}</div>
+                            <div class="col" style="padding-left:0;">Price({{cartCount}} items)</div>
+                            <div class="col text-right">&#8377;<span id="total">{{totalValue}}</span></div>
                         </div>
                         <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
                             <div class="col" style="padding-left:0;">Delivery Charge</div>
@@ -52,7 +51,7 @@
                         </div>
                         <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
                             <div class="col">TOTAL PRICE</div>
-                            <div class="col text-right">&#8377;353,918 </div>
+                            <div class="col text-right">&#8377;<span id="totaldelivery">{{totalwtDelivery}}</span></div>
                         </div>
                         <button class="btn btn-success" onclick="/place-order"><b>CHECKOUT</b></button>
                     </div>
