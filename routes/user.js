@@ -136,7 +136,7 @@ router.post('/change-product-quantity',(req,res,next)=>{
 //removeBtnactionRounter--------------------------
 router.post('/delete-cart-products',(req,res)=>{
   userHelpers.deleteCartProduct(req.body).then(async(response)=>{
-    res.json(response)
+    res.json(response);
   });
 });
 
