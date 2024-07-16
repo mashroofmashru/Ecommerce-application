@@ -142,8 +142,16 @@ router.post('/delete-cart-products',(req,res)=>{
 
 //placeOrder---------------------------------------------
 router.get('/place-order',verifyLogin,async(req,res)=>{
-  let total=await userHelpers.getTotalAmount(req.session.user._id);
-  res.render('user/place-order',{total,user:req.session.user});
+  let products=await userHelpers.getCartProducts(req.session.user._id);
+  let totalValue=0;
+  let cartCount=0;
+  let  totalwtDelivery=0;
+  if(products.length>0){
+    let total=await userHelpers.getTotalAmount(req.session.user._id);
+  res.render('user/place-order',{total,user:req.session.user});}
+  else{
+    res.render('user/cart',{products,user:req.session.user,totalValue,cartCount,totalwtDelivery});
+  }
 });
 
 router.post('/place-order',async(req,res)=>{
