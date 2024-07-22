@@ -66,5 +66,11 @@ router.post('/edit-product',(req,res)=>{
   });
 });
 
+router.get('/getAllOrders',async(req,res)=>{
+  productHelpers.getAllOrders().then((orders)=>{
+    console.log("order"+orders)
+    res.render('admin/view-orders',{admin:true, orders});
+  });
+});
 
 module.exports = router;

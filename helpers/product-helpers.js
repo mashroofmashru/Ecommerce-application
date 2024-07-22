@@ -46,5 +46,22 @@ module.exports={
                 resolve()
             });
         });
+    },
+    getAllOrders:()=>{
+        return new Promise(async (resolve, reject) => {
+            let orders = await db.get().collection(collection.ORDER_COLLECTION).find().toArray();
+
+            // Format the date to dd/mm/yyyy
+            orders = orders.map(order => {
+                const date = new Date(order.date);
+                const day = String(date.getDate()).padStart(2, '0');
+                const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+                const year = date.getFullYear();
+                order.date = `${day}/${month}/${year}`;
+                return order;
+            });
+            console.log(orders);
+            resolve(orders);
+        });
     }
 }
