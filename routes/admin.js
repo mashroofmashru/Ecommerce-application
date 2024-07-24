@@ -66,11 +66,18 @@ router.post('/edit-product',(req,res)=>{
   });
 });
 
+// list all order-------
 router.get('/getAllOrders',async(req,res)=>{
   productHelpers.getAllOrders().then((orders)=>{
-    console.log("order"+orders)
     res.render('admin/view-orders',{admin:true, orders});
   });
 });
+
+// list all users list-----------
+router.get('/userList',async(req,res)=>{
+  productHelpers.getAllUserList().then((users)=>{
+    res.render('admin/userlist',{admin:true, users});
+  })
+})
 
 module.exports = router;

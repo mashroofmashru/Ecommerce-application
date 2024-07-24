@@ -6,7 +6,6 @@ module.exports={
     addProducts:(product,callback)=>{
         console.log(product);
         db.get().collection(collection.PRODUCS_COLLECTIONS).insertOne(product).then((data)=>{
-            console.log(data)
             callback(data.insertedId);
 
         })
@@ -60,8 +59,13 @@ module.exports={
                 order.date = `${day}/${month}/${year}`;
                 return order;
             });
-            console.log(orders);
             resolve(orders);
         });
+    },
+    getAllUserList:()=>{
+        return new Promise(async(resolve,reject)=>{
+            let users=await db.get().collection(collection.USER_COLLECTIONS).find().toArray();
+            resolve(users);
+        })
     }
 }

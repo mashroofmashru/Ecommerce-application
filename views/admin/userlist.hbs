@@ -1,0 +1,45 @@
+<section>
+    <h3 class="page-head m-2 "><a href="" class="prod-name">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                    </svg>
+                    <b>All Users</b>
+                </a>
+            </h3>
+    <div class="container mt-5">
+        <table class="table mt-3" id="orderList">
+            <thead>
+                <tr>
+                    <th scope="col">sl.no</th>
+                    <th scope="col">userId</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Password</th>
+                    <th scope="col" hidden></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each users}}
+                <tr>
+                    <td>{{@index}}</td>
+                    <td>{{this._Id}}</td>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Email}}</td>
+                    <td>{{this.Passwoed}}</td>
+                    <td>
+                        <a href="#" class="btn btn-danger"
+              onclick="return confirm('Do you want to delete {{this.Name}}')">Delete</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</section>
+<script>
+  jQuery(document).ready(function () {
+    jQuery('#orderList').DataTable();
+  });
+</script>
