@@ -67,5 +67,26 @@ module.exports={
             let users=await db.get().collection(collection.USER_COLLECTIONS).find().toArray();
             resolve(users);
         })
+    },
+    addBanner:(banner)=>{
+        return new Promise(async(resolve,reject)=>{
+            db.get().collection(collection.BANNER_COLLECTION).insertOne(banner).then((data)=>{
+                console.log(data);
+                resolve(data.insertedId);
+            })
+        });
+    },
+    viewBanner:()=>{
+        return new Promise(async(resolve,reject)=>{
+            let banner=await db.get().collection(collection.BANNER_COLLECTION).find().toArray();
+            resolve(banner);
+        });
+    },
+    deleteBanner:(bannerId)=>{
+        return new Promise(async(resolve,reject)=>{
+            db.get().collection(collection.BANNER_COLLECTION).deleteOne({_id:new ObjectId(bannerId)}).then(()=>{
+                resolve();
+            })
+        });
     }
 }

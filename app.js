@@ -13,7 +13,11 @@ var db=require('./config/connection');
 var session=require('express-session');
 
 // view engine setup
-app.engine('hbs',hbs.engine({extname:'hbs', defaultLayout:'layout', layoutDir:__dirname+'/views/layout/',partialsDir:__dirname+'/views/partials/'}))
+app.engine('hbs',hbs.engine({extname:'hbs', defaultLayout:'layout', layoutDir:__dirname+'/views/layout/',partialsDir:__dirname+'/views/partials/', helpers: {
+  rowNumber: function(index) {
+    return index + 1;
+  }
+}}))
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 

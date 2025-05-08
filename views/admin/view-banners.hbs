@@ -1,0 +1,27 @@
+<section>
+    <div class="container">
+        <div class="row my-3">
+            <a href="/admin/add-banner" class="btn btn-success ml-auto">Add Banner</a>
+        </div>
+        <div class="row pt-5">
+            {{#each banner}}
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img class="card-img-top" src="/banner-Images/{{this._id}}.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <a href="/product-detail?{{this._id}}" class="font-bold h5">
+                            <span class="prod-name text-decoration-none text-dark text-uppercase">{{this.Name}}</span>
+                        </a>
+                        <div>
+                            <span class="sale-price font-semibold text-success">{{this._id}}</span>
+                        </div>
+                        <div>
+                            <a href="/admin/delete-banner?id={{this._id}}" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>

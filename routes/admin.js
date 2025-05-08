@@ -76,8 +76,44 @@ router.get('/getAllOrders',async(req,res)=>{
 // list all users list-----------
 router.get('/userList',async(req,res)=>{
   productHelpers.getAllUserList().then((users)=>{
-    res.render('admin/userlist',{admin:true, users});
-  })
-})
+    res.render('admin/view-userlist',{admin:true, users});
+  });
+});
 
+//list banners -----------
+router.get('/view-banners',(req,res)=>{
+  productHelpers.viewBanner().then((banner)=>{
+    res.render('admin/view-banners',{admin:true,banner});
+  });
+});
+
+router.get('/add-banner',(req,res)=>{
+  res.render('admin/add-banner');
+});
+
+router.post('/add-banner',(req,res)=>{
+  console.log(req.body);
+  console.log(req.files.image);
+
+  productHelpers.addBanner(req.body).then((id)=>{
+    let image=req.files.Image;
+    image.mv('./public/banner-Images/'+id+'.jpg',(err,done)=>{
+      if(!err){
+
+        res.render('admin/add-banner',{admin:true});
+
+      }else{
+        console.error(err);
+        res.status(500).send("An error occurred while moving the uploaded image file");
+      }
+    });
+  });
+});
+
+router.get('/delete-banner/',(req,res)=>{
+  let bannerId=req.query.id;
+  productHelpers.deleteBanner(bannerId).then(()=>{
+    res.redirect('/admin/view-banners');
+  })
+});
 module.exports = router;

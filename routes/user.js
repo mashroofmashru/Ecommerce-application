@@ -18,12 +18,14 @@ const verifyLogin=(req,res,next)=>{
 router.get('/',async function(req, res, next) {
   let user=req.session.user;
   let cartCount=null;
+  let banner=await productHelpers.viewBanner();
+
   if(user){
     cartCount=await userHelpers.getCartCount(req.session.user._id);
   }
 
   productHelpers.getAllProducts().then((products)=>{
-    res.render('user/index',{products,user,cartCount});
+    res.render('user/index',{products,user,cartCount,banner});
   });
 
 });

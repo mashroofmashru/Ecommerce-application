@@ -1,6 +1,6 @@
 <section>
   <div class="container">
-    <div class="row mt-3">
+    <div class="row my-3">
       <a href="/admin/add-product" class="btn btn-success ml-auto">Add product</a>
     </div>
     <table class="table mt-3" id="productsTable">
@@ -22,7 +22,7 @@
           <td>{{this.Name}}</td>
           <td>{{this.Category}}</td>
           <td>{{this.Description}}</td>
-          <td><img src="/product-Images/{{this._id}}.jpg" height="10px" width="10px" class="thumbanil" alt=""></td>
+          <td><img style="height: 50px; width:auto; aspect-ratio: 1/1;" src="/product-Images/{{this._id}}.jpg" height="10px" width="10px" class="thumbanil" alt=""></td>
           <td>{{this.Price}}₹</td>
           <td>
             <a href="/admin/edit-product?id={{this._id}}" class="btn btn-success">Edit</a>
