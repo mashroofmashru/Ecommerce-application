@@ -1,6 +1,7 @@
 # 🛒 Node.js eCommerce Website
 
-![eCommerce Demo](https://github.com/mashroofmashru/node-ECommerce/assets/136979239/2d2869de-f56a-499c-ab8f-9681cabac63b)
+![eCommerce Demo](<img width="1840" height="1939" alt="292681981-2d2869de-f56a-499c-ab8f-9681cabac63b" src="https://github.com/user-attachments/assets/260c9649-ac13-4cc9-9325-436f41ccc922" />)
+
 
 ---
 
